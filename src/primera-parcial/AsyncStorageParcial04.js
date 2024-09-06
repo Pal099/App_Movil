@@ -3,7 +3,7 @@ import { View, StyleSheet, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Input, Button, ListItem, Text } from '@rneui/themed';
 
-const AsyncStorage04 = () => {
+const AsyncStorageParcial04 = () => {
   const [codigo, setCodigo] = useState('');
   const [carrera, setCarrera] = useState('');
   const [facultad, setFacultad] = useState('');
@@ -142,4 +142,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AsyncStorage04;
+export default AsyncStorageParcial04;

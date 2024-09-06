@@ -1,37 +1,36 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { Input, ListItem } from '@rneui/base';
 
-const Componente01 = ({ navigation }) => {
-    const [inputValue, setInputValue] = useState('')
+const ComponenteParcial01 = ({ navigation }) => {
+    const [inputValue, setInputValue] = useState('');
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Primera Parcial</Text>
-            {/* Cambiamos TextInput por Input */}
+        
+            <Text style={styles.text}>Examen Primera Parcial</Text>
             <Input
                 placeholder='Ingresar Nombre'
                 value={inputValue}
                 onChangeText={setInputValue}
             />
             <ScrollView>
-                <ListItem bottomDivider onPress={() => navigation.navigate('Props02', {
+                <ListItem bottomDivider onPress={() => navigation.navigate('PropsParcial02', {
                     inputValue,
-                    estado: false,
+                    semestre: '8',
                 })}>
                     <ListItem.Content>
                         <ListItem.Title>PropsParcial02</ListItem.Title>
                     </ListItem.Content>
                 </ListItem>
-                <ListItem bottomDivider onPress={() => navigation.navigate('Axios03')}>
+                <ListItem bottomDivider onPress={() => navigation.navigate('AxiosParcial03')}>
                     <ListItem.Content>
                         <ListItem.Title>AxiosParcial03</ListItem.Title>
                     </ListItem.Content>
                 </ListItem>
-                <ListItem bottomDivider onPress={() => navigation.navigate('AsyncStorage04')}>
+                <ListItem bottomDivider onPress={() => navigation.navigate('AsyncStorageParcial04')}>
                     <ListItem.Content>
-                        <ListItem.Title>Async StorageParcial04</ListItem.Title>
+                        <ListItem.Title>Async AsyncStorageParcial04</ListItem.Title>
                     </ListItem.Content>
                 </ListItem>
             </ScrollView>
@@ -43,16 +42,22 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-         backgroundColor: 'blue'
+        backgroundColor: 'green',
+    },
+    logo: {
+        width: 100,
+        height: 100,
+        alignSelf: 'center',
+        marginBottom: 20, // Espacio entre el logo y el texto
     },
     text: {
         marginTop: 10,
         fontSize: 30,
         paddingHorizontal: 20,
         fontWeight: 'bold',
-        color: 'black' ,
+        color: 'black',
         textAlign: 'center',
     },
 });
 
-export default Componente01;
+export default ComponenteParcial01;
